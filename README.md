@@ -1,5 +1,3 @@
-# Taxing-Property-Transaction
-presentation
 # 房产购置所有权载体选择 - 交互式演示
 
 这是一个关于房产购置所有权载体选择的交互式演示网页，专为税务与法律专业人士设计。
