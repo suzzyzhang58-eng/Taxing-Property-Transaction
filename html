@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房产购置所有权载体选择 - 税务与法律视角</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏样式 */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* 幻灯片样式 */
+        .slide {
+            display: none;
+            padding: 4rem 2rem;
+            min-height: 80vh;
+            animation: fadeIn 1s ease;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .slide-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .slide-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        /* 封面页样式 */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .cover h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideDown 1s ease;
+        }
+
+        .cover h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: slideUp 1s ease;
+        }
+
+        .cover p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeIn 2s ease;
+        }
+
+        /* 议程样式 */
+        .agenda-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .agenda-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .agenda-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .agenda-number {
+            background: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* 卡片样式 */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-footer {
+            background: #f8f9fa;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* 表格样式 */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e9f7fe;
+        }
+
+        /* 导航控制 */
+        .slide-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .progress-bar {
+            height: 5px;
+            background: #ddd;
+            margin-top: 2rem;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--secondary);
+            width: 10%;
+            transition: width 0.5s ease;
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .cover h1 {
+                font-size: 2.8rem;
+            }
+            
+            .cover h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background: var(--primary);
+                transition: var(--transition);
+                padding: 2rem 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+                text-align: center;
+            }
+            
+            .slide {
+                padding: 2rem 1rem;
+            }
+            
+            .cover h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cover h2 {
+                font-size: 1.3rem;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .agenda-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .cover h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* 语言切换 */
+        .lang-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .lang-btn:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-home"></i>
+                    <span>房产载体选择</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link" data-slide="0">首页</a></li>
+                    <li><a href="#" class="nav-link" data-slide="1">议程</a></li>
+                    <li><a href="#" class="nav-link" data-slide="2">概述</a></li>
+                    <li><a href="#" class="nav-link" data-slide="3">个人持有</a></li>
+                    <li><a href="#" class="nav-link" data-slide="4">合伙制</a></li>
+                    <li><a href="#" class="nav-link" data-slide="5">公司结构</a></li>
+                    <li><a href="#" class="nav-link" data-slide="6">信托结构</a></li>
+                    <li><a href="#" class="nav-link" data-slide="7">比较总结</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 幻灯片容器 -->
+    <main>
+        <!-- 封面页 -->
+        <section class="slide active" id="slide-0">
+            <div class="cover">
+                <h1>房产购置的所有权载体选择</h1>
+                <h2>税务与法律视角</h2>
+                <p>深入探讨自住业主、投资者和开发商在房产所有权结构选择上的关键考量因素，帮助您做出明智决策。</p>
+                <a href="#" class="btn start-presentation" data-slide="1">开始演示 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <!-- 议程页 -->
+        <section class="slide" id="slide-1">
+            <div class="container">
+                <h2 class="slide-title">演示议程</h2>
+                <p class="slide-subtitle">本次演示将全面介绍房产购置中的各种所有权载体选择及其税务与法律影响</p>
+                
+                <div class="content">
+                    <div class="agenda-list">
+                        <div class="agenda-item">
+                            <div class="agenda-number">1</div>
+                            <div>
+                                <h3>所有权载体概述</h3>
+                                <p>自住业主、投资者与开发商的不同目标</p>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-number">2</div>
+                            <div>
+                                <h3>个人直接持有</h3>
+                                <p>最简单的所有权形式及其优缺点</p>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-number">3</div>
+                            <div>
+                                <h3>合伙制</h3>
+                                <p>普通合伙与有限合伙的比较</p>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-number">4</div>
+                            <div>
+                                <h3>公司结构</h3>
+                                <p>有限责任与税务优势</p>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-number">5</div>
+                            <div>
+                                <h3>信托结构</h3>
+                                <p>资产保护与税务规划</p>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-number">6</div>
+                            <div>
+                                <h3>比较总结</h3>
+                                <p>各种载体的综合对比</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-controls">
+                        <a href="#" class="btn btn-outline prev-slide" data-slide="0"><i class="fas fa-arrow-left"></i> 上一页</a>
+                        <a href="#" class="btn next-slide" data-slide="2">下一页 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 概述页 -->
+        <section class="slide" id="slide-2">
+            <div class="container">
+                <h2 class="slide-title">所有权载体概述</h2>
+                <p class="slide-subtitle">不同投资者群体的目标与考量因素各不相同</p>
+                
+                <div class="content">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-user"></i> 自住业主</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>主要目标：</p>
+                                <ul>
+                                    <li>购置自住房产</li>
+                                    <li>通过强制储蓄实现"类养老基金计划"</li>
+                                    <li>通过资本增值积累个人财富</li>
+                                </ul>
+                                <p>通常不会过度关注税务规划</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-chart-line"></i> 房产投资者</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>主要诉求：</p>
+                                <ul>
+                                    <li>追求租金收益与资本增值的组合回报</li>
+                                    <li>获取费用支出的税前抵扣</li>
+                                    <li>在不同税率家庭成员间分配收入</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-hard-hat"></i> 开发商/建筑商</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>重点考虑：</p>
+                                <ul>
+                                    <li>关联方规则（避免资产被"污染"）</li>
+                                    <li>确保项目收益可分配至"安全实体"</li>
+                                    <li>短期创收与长期资产保护平衡</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-controls">
+                        <a href="#" class="btn btn-outline prev-slide" data-slide="1"><i class="fas fa-arrow-left"></i> 上一页</a>
+                        <a href="#" class="btn next-slide" data-slide="3">下一页 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人持有页 -->
+        <section class="slide" id="slide-3">
+            <div class="container">
+                <h2 class="slide-title">个人直接持有</h2>
+                <p class="slide-subtitle">最简单直接的所有权形式，适合低风险场景</p>
+                
+                <div class="content">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-header" style="background: var(--success);">
+                                <h3><i class="fas fa-check-circle"></i> 优势</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>设立简单、成本最低</li>
+                                    <li>法律及行政程序简单</li>
+                                    <li>亏损可抵减其他收入</li>
+                                    <li>终止业务成本低</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header" style="background: var(--accent);">
+                                <h3><i class="fas fa-exclamation-triangle"></i> 劣势</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>无限责任风险</li>
+                                    <li>收入分配能力有限</li>
+                                    <li>业务扩展限制</li>
+                                    <li>按个人边际税率计税</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content fade-in" style="margin-top: 2rem;">
+                        <h3>适用场景</h3>
+                        <p>低风险活动（如房产持有、租金收入）可能适用，特别是对于自住业主和小规模投资者。</p>
+                        
+                        <h3>税务处理</h3>
+                        <p>按个人边际税率计税，2021-22及以后年度税率如下：</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>收入区间（纽币）</th>
+                                    <th>税率</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0-14,000</td>
+                                    <td>10.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>14,001-48,000</td>
+                                    <td>17.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>48,001-70,000</td>
+                                    <td>30%</td>
+                                </tr>
+                                <tr>
+                                    <td>70,001-180,000</td>
+                                    <td>33%</td>
+                                </tr>
+                                <tr>
+                                    <td>>180,000</td>
+                                    <td>39%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="slide-controls">
+                        <a href="#" class="btn btn-outline prev-slide" data-slide="2"><i class="fas fa-arrow-left"></i> 上一页</a>
+                        <a href="#" class="btn next-slide" data-slide="4">下一页 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 合伙制页 -->
+        <section class="slide" id="slide-4">
+            <div class="container">
+                <h2 class="slide-title">合伙制</h2>
+                <p class="slide-subtitle">适合联合投资的灵活结构</p>
+                
+                <div class="content">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-handshake"></i> 普通合伙</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>所有合伙人承担无限责任</li>
+                                    <li>无需在新西兰注册</li>
+                                    <li>税务穿透处理</li>
+                                    <li>利润分配灵活</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag" style="background: var(--accent); color: white; padding: 5px 10px; border-radius: 20px;">高风险</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-users"></i> 有限合伙</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>至少1名普通合伙人（无限责任）</li>
+                                    <li>至少1名有限合伙人（有限责任）</li>
+                                    <li>需在NZ注册</li>
+                                    <li>税务穿透处理</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag" style="background: var(--success); color: white; padding: 5px 10px; border-radius: 20px;">风险可控</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content fade-in" style="margin-top: 2rem;">
+                        <h3>关键特征</h3>
+                        <ul>
+                            <li><strong>税务穿透性</strong>：合伙本身不纳税，收入、费用、资产及负债按合伙份额直接归属合伙人</li>
+                            <li><strong>资本利得</strong>：分配时通常免税</li>
+                            <li><strong>GST处理</strong>：合伙需单独注册GST，合伙人个人无需注册</li>
+                            <li><strong>无限责任</strong>：普通合伙人需谨慎风险隔离</li>
+                        </ul>
+                        
+                        <h3>适用场景</h3>
+                        <p>适合小规模合作投资（如联合购房出租），但必须谨慎管理责任和治理方面的问题。</p>
+                    </div>
+                    
+                    <div class="slide-controls">
+                        <a href="#" class="btn btn-outline prev-slide" data-slide="3"><i class="fas fa-arrow-left"></i> 上一页</a>
+                        <a href="#" class="btn next-slide" data-slide="5">下一页 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公司结构页 -->
+        <section class="slide" id="slide-5">
+            <div class="container">
+                <h2 class="slide-title">公司结构</h2>
+                <p class="slide-subtitle">有限责任与税务优势的平衡</p>
+                
+                <div class="content">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-header" style="background: var(--success);">
+                                <h3><i class="fas fa-check-circle"></i> 优势</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>有限责任保护</li>
+                                    <li>统一28%的公司税率</li>
+                                    <li>归集抵免制度避免双重征税</li>
+                                    <li>业务扩展性强</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header" style="background: var(--accent);">
+                                <h3><i class="fas fa-exclamation-triangle"></i> 劣势</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>设立和合规成本较高</li>
+                                    <li>利润分配可能产生额外税负</li>
+                                    <li>亏损通常不能穿透给股东</li>
+                                    <li>行政要求更复杂</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content fade-in" style="margin-top: 2rem;">
+                        <h3>归集抵免制度</h3>
+                        <p>为避免利润分配时的双重征税，新西兰实行归集抵免制度：</p>
+                        <ul>
+                            <li>公司已缴税款计入归集抵免账户(ICA)</li>
+                            <li>抵免可附加于股息分配</li>
+                            <li>股东根据自身税率计算最终税负</li>
+                        </ul>
+                        
+                        <h3>特殊公司类型</h3>
+                        <div class="card-container">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>穿透公司(LTCs)</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>利润/亏损直接穿透至股东，股东责任限于出资额，亏损抵扣受"股东基础"限制。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>合格公司(QCs)</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>资本分配免税，适用于小型企业结构。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-controls">
+                        <a href="#" class="btn btn-outline prev-slide" data-slide="4"><i class="fas fa-arrow-left"></i> 上一页</a>
+                        <a href="#" class="btn next-slide" data-slide="6">下一页 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 信托结构页 -->
+        <section class="slide" id="slide-6">
+            <div class="container">
+                <h2 class="slide-title">信托结构</h2>
+                <p class="slide-subtitle">资产保护与税务规划的高级工具</p>
+                
+                <div class="content">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-user-tie"></i> 委托人</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>转移资产或提供财务支持的自然人/法人，可同时担任受托人或受益人。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-user-shield"></i> 受托人</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>持有信托财产法定所有权，履行管理义务。建议至少2名或使用公司受托人。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-users"></i> 受益人</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>明确指定的个人或群体，享有信托利益。可以是家族成员或特定群体。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content fade-in" style="margin-top: 2rem;">
+                        <h3>信托类型</h3>
+                        <div class="card-container">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>自由裁量信托</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>受托人自主决定受益权分配，典型应用：家族信托，税务优势：分配灵活性。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>固定信托</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>各受益权比例预先确定，受益人可强制执行权利。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>慈善信托</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>符合慈善用途，可享受免税待遇。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>税务处理</h3>
+                        <ul>
+                            <li><strong>受托人收入</strong>：按33%的税率征税（累积收入）</li>
+                            <li><strong>受益人收入</strong>：按受益人的边际税率征税（已分配收入）</li>
+                            <li><strong>资本利得</strong>：通常免税（除非属于应税交易）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="slide-controls">
+                        <a href="#" class="btn btn-outline prev-slide" data-slide="5"><i class="fas fa-arrow-left"></i> 上一页</a>
+                        <a href="#" class="btn next-slide" data-slide="7">下一页 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 比较总结页 -->
+        <section class="slide" id="slide-7">
+            <div class="container">
+                <h2 class="slide-title">比较总结</h2>
+                <p class="slide-subtitle">各种所有权载体的综合对比</p>
+                
+                <div class="content">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>实体类型</th>
+                                <th>税率</th>
+                                <th>投资者责任</th>
+                                <th>分配征税</th>
+                                <th>转让便利性</th>
+                                <th>适用场景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>个人直接持有</strong></td>
+                                <td>个人边际税率</td>
+                                <td>无限责任</td>
+                                <td>无</td>
+                                <td>较复杂</td>
+                                <td>自住、低风险投资</td>
+                            </tr>
+                            <tr>
+                                <td><strong>普通合伙</strong></td>
+                                <td>合伙人税率</td>
+                                <td>无限责任</td>
+                                <td>无</td>
+                                <td>较复杂</td>
+                                <td>小规模合作投资</td>
+                            </tr>
+                            <tr>
+                                <td><strong>有限合伙</strong></td>
+                                <td>合伙人税率</td>
+                                <td>有限/无限责任</td>
+                                <td>无</td>
+                                <td>较复杂</td>
+                                <td>风险投资、项目合作</td>
+                            </tr>
+                            <tr>
+                                <td><strong>公司</strong></td>
+                                <td>28%</td>
+                                <td>有限责任</td>
+                                <td>有（股息）</td>
+                                <td>简单（股份）</td>
+                                <td>业务扩展、资产保护</td>
+                            </tr>
+                            <tr>
+                                <td><strong>信托</strong></td>
+                                <td>33%（受托人）</td>
+                                <td>受托人无限责任</td>
+                                <td>有（受益人收入）</td>
+                                <td>较复杂</td>
+                                <td>财富传承、资产保护</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="content fade-in" style="margin-top: 2rem;">
+                        <h3>关键建议</h3>
+                        <div class="card-container">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4><i class="fas fa-bullseye"></i> 明确目标</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>首先确定您是自住业主、投资者还是开发商，不同目标对应不同优先级。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4><i class="fas fa-balance-scale"></i> 匹配风险</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>根据投资风险水平选择合适结构，高风险活动需要更强的资产保护。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4><i class="fas fa-user-tie"></i> 专业咨询</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>规则复杂且不断变化，专业顾问能帮您避免昂贵错误，是值得的投资。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="conclusion" style="text-align: center; margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+                            <h3>感谢您的关注！</h3>
+                            <p>如有任何问题，欢迎进一步交流讨论。</p>
+                            <a href="#" class="btn" data-slide="0"><i class="fas fa-home"></i> 返回首页</a>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-controls">
+                        <a href="#" class="btn btn-outline prev-slide" data-slide="6"><i class="fas fa-arrow-left"></i> 上一页</a>
+                        <a href="#" class="btn" data-slide="0">返回首页 <i class="fas fa-home"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 进度条 -->
+    <div class="progress-bar">
+        <div class="progress" id="presentation-progress"></div>
+    </div>
+
+    <!-- 语言切换按钮 -->
+    <div class="lang-toggle">
+        <button class="lang-btn" id="lang-toggle">
+            <i class="fas fa-language"></i>
+        </button>
+    </div>
+
+    <script>
+        // 幻灯片导航
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const nextButtons = document.querySelectorAll('.next-slide');
+            const prevButtons = document.querySelectorAll('.prev-slide');
+            const startButton = document.querySelector('.start-presentation');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinksContainer = document.querySelector('.nav-links');
+            const progressBar = document.getElementById('presentation-progress');
+            
+            let currentSlide = 0;
+            
+            // 显示指定幻灯片
+            function showSlide(index) {
+                // 隐藏所有幻灯片
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // 显示当前幻灯片
+                slides[index].classList.add('active');
+                
+                // 更新当前幻灯片索引
+                currentSlide = index;
+                
+                // 更新进度条
+                updateProgressBar();
+                
+                // 滚动到顶部
+                window.scrollTo(0, 0);
+            }
+            
+            // 更新进度条
+            function updateProgressBar() {
+                const progress = ((currentSlide + 1) / slides.length) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // 导航链接点击事件
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                    
+                    // 在移动设备上关闭菜单
+                    if (window.innerWidth <= 768) {
+                        navLinksContainer.classList.remove('active');
+                    }
+                });
+            });
+            
+            // 下一页按钮点击事件
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                });
+            });
+            
+            // 上一页按钮点击事件
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                });
+            });
+            
+            // 开始演示按钮
+            if (startButton) {
+                startButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                });
+            }
+            
+            // 菜单切换
+            menuToggle.addEventListener('click', function() {
+                navLinksContainer.classList.toggle('active');
+            });
+            
+            // 键盘导航
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
+                    showSlide(currentSlide + 1);
+                } else if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            });
+            
+            // 初始化进度条
+            updateProgressBar();
+            
+            // 添加滚动动画
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.card, .agenda-item').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
