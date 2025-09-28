@@ -330,6 +330,57 @@
             background: #e9f7fe;
         }
 
+        /* 例子样式 */
+        .example-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .example-title i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .example-highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .tax-calculation {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .tax-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .tax-total {
+            font-weight: bold;
+            border-top: 2px solid var(--primary);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+        }
+
         /* 导航控制 */
         .slide-controls {
             display: flex;
@@ -512,7 +563,7 @@
             <div class="cover">
                 <h1>房产购置的所有权载体选择</h1>
                 <h2>税务与法律视角</h2>
-                <p>深入探讨自住业主、投资者和开发商在房产所有权结构选择上的关键考量因素，帮助您做出明智决策。</p>
+                <p>深入探讨自住业主、投资者和开发商在房产所有权结构选择上的关键考量因素，通过实际案例帮助您做出明智决策。</p>
                 <a href="#" class="btn start-presentation" data-slide="1">开始演示 <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
@@ -564,7 +615,7 @@
                             <div class="agenda-number">6</div>
                             <div>
                                 <h3>比较总结</h3>
-                                <p>各种载体的综合对比</p>
+                                <p>各种载体的综合对比与实例分析</p>
                             </div>
                         </div>
                     </div>
@@ -629,6 +680,15 @@
                         </div>
                     </div>
                     
+                    <div class="example-box">
+                        <div class="example-title">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>核心观点</span>
+                        </div>
+                        <p><strong>没有最好的结构，只有最适合您的结构。</strong> 您的选择应基于投资目标、风险承受能力和税务规划需求。</p>
+                        <p><strong>There is no 'best' structure, only the one that is 'most suitable' for you.</strong> Your choice should be based on investment goals, risk tolerance, and tax planning needs.</p>
+                    </div>
+                    
                     <div class="slide-controls">
                         <a href="#" class="btn btn-outline prev-slide" data-slide="1"><i class="fas fa-arrow-left"></i> 上一页</a>
                         <a href="#" class="btn next-slide" data-slide="3">下一页 <i class="fas fa-arrow-right"></i></a>
@@ -675,42 +735,51 @@
                     </div>
                     
                     <div class="content fade-in" style="margin-top: 2rem;">
+                        <h3>税务计算实例</h3>
+                        
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-calculator"></i>
+                                <span>Matthew Talbot 案例</span>
+                            </div>
+                            <p><strong>背景</strong>: Matthew Talbot持有多处商业房产，年度租金收入$177,000，可抵扣费用$105,500，应税收入$71,500。</p>
+                            
+                            <div class="tax-calculation">
+                                <div class="tax-row">
+                                    <span>首 $14,000 × 10.5%</span>
+                                    <span>$1,470</span>
+                                </div>
+                                <div class="tax-row">
+                                    <span>$33,999 × 17.5%</span>
+                                    <span>$5,950</span>
+                                </div>
+                                <div class="tax-row">
+                                    <span>$21,999 × 30%</span>
+                                    <span>$6,600</span>
+                                </div>
+                                <div class="tax-row">
+                                    <span>$1,499 × 33%</span>
+                                    <span>$495</span>
+                                </div>
+                                <div class="tax-row tax-total">
+                                    <span>合计税额</span>
+                                    <span>$14,515</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span>Pearl Rafferty 案例 - 规则变化的影响</span>
+                            </div>
+                            <p><strong>2017年情况</strong>: Pearl Rafferty购买住宅投资房，借款$200,000，利息支出$12,000，租金收入$10,000，产生$2,000亏损。</p>
+                            <p><span class="example-highlight">在2017年规则下</span>: 这$2,000亏损可以抵减她的其他收入（如工资），获得退税。</p>
+                            <p><strong>重要变化</strong>: 如果她在<strong>2021年3月27日后</strong>购买同样的房产，根据新规，住宅租赁的亏损<span class="example-highlight">不能再抵减其他收入</span>！</p>
+                        </div>
+                        
                         <h3>适用场景</h3>
                         <p>低风险活动（如房产持有、租金收入）可能适用，特别是对于自住业主和小规模投资者。</p>
-                        
-                        <h3>税务处理</h3>
-                        <p>按个人边际税率计税，2021-22及以后年度税率如下：</p>
-                        
-                        <table class="comparison-table">
-                            <thead>
-                                <tr>
-                                    <th>收入区间（纽币）</th>
-                                    <th>税率</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0-14,000</td>
-                                    <td>10.5%</td>
-                                </tr>
-                                <tr>
-                                    <td>14,001-48,000</td>
-                                    <td>17.5%</td>
-                                </tr>
-                                <tr>
-                                    <td>48,001-70,000</td>
-                                    <td>30%</td>
-                                </tr>
-                                <tr>
-                                    <td>70,001-180,000</td>
-                                    <td>33%</td>
-                                </tr>
-                                <tr>
-                                    <td>>180,000</td>
-                                    <td>39%</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                     
                     <div class="slide-controls">
@@ -765,13 +834,34 @@
                     </div>
                     
                     <div class="content fade-in" style="margin-top: 2rem;">
-                        <h3>关键特征</h3>
-                        <ul>
-                            <li><strong>税务穿透性</strong>：合伙本身不纳税，收入、费用、资产及负债按合伙份额直接归属合伙人</li>
-                            <li><strong>资本利得</strong>：分配时通常免税</li>
-                            <li><strong>GST处理</strong>：合伙需单独注册GST，合伙人个人无需注册</li>
-                            <li><strong>无限责任</strong>：普通合伙人需谨慎风险隔离</li>
-                        </ul>
+                        <h3>利息抵扣规则实例</h3>
+                        
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-question-circle"></i>
+                                <span>情形一：借款返还资本</span>
+                            </div>
+                            <p><strong>问题</strong>: 合伙从银行借款用于返还合伙人的原始资本，这笔借款的利息可以抵扣吗？</p>
+                            <p><strong>答案</strong>: 只有当原资本当初是用于合伙业务或用于偿还可抵扣利息的贷款时，新借款的利息才可抵扣。</p>
+                        </div>
+                        
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-question-circle"></i>
+                                <span>情形二：借款返还利润</span>
+                            </div>
+                            <p><strong>问题</strong>: 合伙借款返还往年的利润，利息可以抵扣吗？</p>
+                            <p><strong>答案</strong>: 仅限利润中再投入业务的部分对应的利息可抵扣；单纯分配当期利润或资产重估增值部分的利息<span class="example-highlight">不可抵扣</span>。</p>
+                        </div>
+                        
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>关键要点</span>
+                            </div>
+                            <p>资金的<strong>最终用途</strong>决定了利息的可抵扣性，而不仅仅是借款的名义目的。</p>
+                            <p>The <strong>ultimate use</strong> of funds determines interest deductibility, not just the nominal purpose of borrowing.</p>
+                        </div>
                         
                         <h3>适用场景</h3>
                         <p>适合小规模合作投资（如联合购房出租），但必须谨慎管理责任和治理方面的问题。</p>
@@ -823,34 +913,53 @@
                     </div>
                     
                     <div class="content fade-in" style="margin-top: 2rem;">
-                        <h3>归集抵免制度</h3>
-                        <p>为避免利润分配时的双重征税，新西兰实行归集抵免制度：</p>
-                        <ul>
-                            <li>公司已缴税款计入归集抵免账户(ICA)</li>
-                            <li>抵免可附加于股息分配</li>
-                            <li>股东根据自身税率计算最终税负</li>
-                        </ul>
+                        <h3>归集抵免制度实例</h3>
                         
-                        <h3>特殊公司类型</h3>
-                        <div class="card-container">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>穿透公司(LTCs)</h4>
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-calculator"></i>
+                                <span>归集抵免计算示例</span>
+                            </div>
+                            <p><strong>基础数据</strong>: 公司利润$1,000，按28%税率缴纳$280税款，税后利润$720。</p>
+                            <p>当公司向股东分配这$720股息时，可以附带$280的归集抵免。</p>
+                            
+                            <div class="tax-calculation">
+                                <div class="tax-row">
+                                    <span>税率17.5%的股东</span>
+                                    <span></span>
                                 </div>
-                                <div class="card-body">
-                                    <p>利润/亏损直接穿透至股东，股东责任限于出资额，亏损抵扣受"股东基础"限制。</p>
+                                <div class="tax-row">
+                                    <span style="margin-left: 20px;">股息$720 + 抵免$280 = 应税$1,000</span>
+                                    <span></span>
+                                </div>
+                                <div class="tax-row">
+                                    <span style="margin-left: 20px;">$1,000 × 17.5% = 应缴$175</span>
+                                    <span></span>
+                                </div>
+                                <div class="tax-row">
+                                    <span style="margin-left: 20px;">已有抵免$280，产生$105超额抵免</span>
+                                    <span class="example-highlight">(可结转)</span>
+                                </div>
+                                
+                                <div class="tax-row">
+                                    <span>税率33%的股东</span>
+                                    <span></span>
+                                </div>
+                                <div class="tax-row">
+                                    <span style="margin-left: 20px;">$1,000 × 33% = 应缴$330</span>
+                                    <span></span>
+                                </div>
+                                <div class="tax-row">
+                                    <span style="margin-left: 20px;">抵免$280后，还需补税</span>
+                                    <span class="example-highlight">$50</span>
                                 </div>
                             </div>
                             
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>合格公司(QCs)</h4>
-                                </div>
-                                <div class="card-body">
-                                    <p>资本分配免税，适用于小型企业结构。</p>
-                                </div>
-                            </div>
+                            <p><strong>结论</strong>: 这就避免了双重征税：利润只在最终受益人层面按个人税率征税一次。</p>
                         </div>
+                        
+                        <h3>适用场景</h3>
+                        <p>公司结构非常适合那些重视资产保护、计划进行业务扩展或将利润再投资的严肃投资者和开发商。</p>
                     </div>
                     
                     <div class="slide-controls">
@@ -898,42 +1007,32 @@
                     </div>
                     
                     <div class="content fade-in" style="margin-top: 2rem;">
-                        <h3>信托类型</h3>
-                        <div class="card-container">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>自由裁量信托</h4>
-                                </div>
-                                <div class="card-body">
-                                    <p>受托人自主决定受益权分配，典型应用：家族信托，税务优势：分配灵活性。</p>
-                                </div>
+                        <h3>信托税务实例 - 常见错误</h3>
+                        
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-gavel"></i>
+                                <span>Trevor 家庭信托案例</span>
                             </div>
-                            
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>固定信托</h4>
-                                </div>
-                                <div class="card-body">
-                                    <p>各受益权比例预先确定，受益人可强制执行权利。</p>
-                                </div>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>慈善信托</h4>
-                                </div>
-                                <div class="card-body">
-                                    <p>符合慈善用途，可享受免税待遇。</p>
-                                </div>
-                            </div>
+                            <p><strong>背景</strong>: Trevor设立家庭信托，受益人是妻子和子女。信托收入用于支付家庭开支，但信托和家庭使用同一银行账户。</p>
+                            <p><strong>问题</strong>: 年末会计师将开支分摊给各受益人，但<strong>没有会议记录证明受托人正式决议分配收入</strong>。</p>
+                            <p><strong>法院判决</strong>: 收入<span class="example-highlight">仍属于受托人收入</span>，按33%税率纳税，而不是按受益人可能更低的边际税率。</p>
+                            <p><strong>关键教训</strong>: 必须有正式的受托人决议和记录！</p>
                         </div>
                         
-                        <h3>税务处理</h3>
-                        <ul>
-                            <li><strong>受托人收入</strong>：按33%的税率征税（累积收入）</li>
-                            <li><strong>受益人收入</strong>：按受益人的边际税率征税（已分配收入）</li>
-                            <li><strong>资本利得</strong>：通常免税（除非属于应税交易）</li>
-                        </ul>
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Wong先生案例 - 混合角色的风险</span>
+                            </div>
+                            <p><strong>背景</strong>: Wong先生作为受托人兼受益人，将租金直接存入个人账户。</p>
+                            <p><strong>法院认定</strong>: 这构成对受益人的分配，收入应按他的边际税率纳税。</p>
+                            <p><strong>但问题</strong>: 由于房产是以信托名义持有，相关贷款利息的抵扣被拒绝。</p>
+                            <p><strong>结果</strong>: 他要为收入全额纳税，却不能抵扣相关费用！</p>
+                        </div>
+                        
+                        <h3>适用场景</h3>
+                        <p>信托是高净值个人和家庭进行长期财富规划和资产保护的基石，但它们需要谨慎且持续的专业管理。</p>
                     </div>
                     
                     <div class="slide-controls">
@@ -948,7 +1047,7 @@
         <section class="slide" id="slide-7">
             <div class="container">
                 <h2 class="slide-title">比较总结</h2>
-                <p class="slide-subtitle">各种所有权载体的综合对比</p>
+                <p class="slide-subtitle">各种所有权载体的综合对比与决策指南</p>
                 
                 <div class="content">
                     <table class="comparison-table">
@@ -1007,34 +1106,56 @@
                     </table>
                     
                     <div class="content fade-in" style="margin-top: 2rem;">
-                        <h3>关键建议</h3>
+                        <h3>决策场景实例</h3>
+                        
                         <div class="card-container">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4><i class="fas fa-bullseye"></i> 明确目标</h4>
+                                    <h4><i class="fas fa-home"></i> 场景一：年轻夫妇</h4>
                                 </div>
                                 <div class="card-body">
-                                    <p>首先确定您是自住业主、投资者还是开发商，不同目标对应不同优先级。</p>
+                                    <p><strong>情况</strong>: 购买第一套自住房</p>
+                                    <p><strong>目标</strong>: 安居 + 强制储蓄 + 未来资本增值</p>
+                                    <p><strong>风险</strong>: 较低</p>
+                                    <p><strong>推荐结构</strong>: <span class="example-highlight">个人直接持有</span></p>
+                                    <p><strong>理由</strong>: 简单、成本低，无限责任风险在自住情况下可控</p>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-header">
-                                    <h4><i class="fas fa-balance-scale"></i> 匹配风险</h4>
+                                    <h4><i class="fas fa-users"></i> 场景二：兄妹合资</h4>
                                 </div>
                                 <div class="card-body">
-                                    <p>根据投资风险水平选择合适结构，高风险活动需要更强的资产保护。</p>
+                                    <p><strong>情况</strong>: 兄妹三人合资购买投资房</p>
+                                    <p><strong>目标</strong>: 租金收益 + 资本增值 + 分摊首付</p>
+                                    <p><strong>风险</strong>: 中等（关系可能变化）</p>
+                                    <p><strong>推荐结构</strong>: <span class="example-highlight">有限合伙或公司</span></p>
+                                    <p><strong>理由</strong>: 明确权益比例，有限责任保护，有退出机制</p>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-header">
-                                    <h4><i class="fas fa-user-tie"></i> 专业咨询</h4>
+                                    <h4><i class="fas fa-briefcase"></i> 场景三：企业家</h4>
                                 </div>
                                 <div class="card-body">
-                                    <p>规则复杂且不断变化，专业顾问能帮您避免昂贵错误，是值得的投资。</p>
+                                    <p><strong>情况</strong>: 成功企业家构建房产投资组合</p>
+                                    <p><strong>目标</strong>: 资产保护 + 税务规划 + 财富传承</p>
+                                    <p><strong>风险</strong>: 高（有其他生意风险）</p>
+                                    <p><strong>推荐结构</strong>: <span class="example-highlight">公司+信托的混合结构</span></p>
+                                    <p><strong>理由</strong>: 公司运营提供有限责任，信托持有提供资产保护和传承规划</p>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="example-box">
+                            <div class="example-title">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>核心建议</span>
+                            </div>
+                            <p><strong>记住</strong>: 您的结构应该随着人生阶段和财富状况的变化而重新评估！</p>
+                            <p><strong>Remember</strong>: Your structure should be re-evaluated as your life stage and wealth situation evolve!</p>
                         </div>
                         
                         <div class="conclusion" style="text-align: center; margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
@@ -1056,13 +1177,6 @@
     <!-- 进度条 -->
     <div class="progress-bar">
         <div class="progress" id="presentation-progress"></div>
-    </div>
-
-    <!-- 语言切换按钮 -->
-    <div class="lang-toggle">
-        <button class="lang-btn" id="lang-toggle">
-            <i class="fas fa-language"></i>
-        </button>
     </div>
 
     <script>
@@ -1177,7 +1291,7 @@
                 });
             }, observerOptions);
             
-            document.querySelectorAll('.card, .agenda-item').forEach(el => {
+            document.querySelectorAll('.card, .agenda-item, .example-box').forEach(el => {
                 observer.observe(el);
             });
         });
