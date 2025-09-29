@@ -21,6 +21,7 @@
             --dark: #2c3e50;
             --success: #2ecc71;
             --warning: #f39c12;
+            --info: #9b59b6;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
@@ -381,6 +382,15 @@
             padding-top: 0.5rem;
         }
 
+        .highlight-text {
+            background: #fff3cd;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border-left: 4px solid var(--warning);
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
         /* 导航控制 */
         .slide-controls {
             display: flex;
@@ -548,6 +558,7 @@
                     <li><a href="#" class="nav-link" data-slide="5">公司结构</a></li>
                     <li><a href="#" class="nav-link" data-slide="6">信托结构</a></li>
                     <li><a href="#" class="nav-link" data-slide="7">比较总结</a></li>
+                    <li><a href="#" class="nav-link" data-slide="8">核心建议</a></li>
                 </ul>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -616,6 +627,13 @@
                             <div>
                                 <h3>比较总结</h3>
                                 <p>各种载体的综合对比与实例分析</p>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-number">7</div>
+                            <div>
+                                <h3>核心建议</h3>
+                                <p>三条黄金法则指导决策</p>
                             </div>
                         </div>
                     </div>
@@ -746,19 +764,19 @@
                             
                             <div class="tax-calculation">
                                 <div class="tax-row">
-                                    <span>首 $14,000 × 10.5%</span>
+                                    <span>$0-14,000 × 10.5%</span>
                                     <span>$1,470</span>
                                 </div>
                                 <div class="tax-row">
-                                    <span>$33,999 × 17.5%</span>
+                                    <span>$14,001-48,000: $34,000 × 17.5%</span>
                                     <span>$5,950</span>
                                 </div>
                                 <div class="tax-row">
-                                    <span>$21,999 × 30%</span>
+                                    <span>$48,001-70,000: $22,000 × 30%</span>
                                     <span>$6,600</span>
                                 </div>
                                 <div class="tax-row">
-                                    <span>$1,499 × 33%</span>
+                                    <span>$70,001-71,500: $1,500 × 33%</span>
                                     <span>$495</span>
                                 </div>
                                 <div class="tax-row tax-total">
@@ -921,7 +939,7 @@
                                 <span>归集抵免计算示例</span>
                             </div>
                             <p><strong>基础数据</strong>: 公司利润$1,000，按28%税率缴纳$280税款，税后利润$720。</p>
-                            <p>当公司向股东分配这$720股息时，可以附带$280的归集抵免。</p>
+                            <p>当公司向股东分配股息时，可以附带$280的归集抵免。</p>
                             
                             <div class="tax-calculation">
                                 <div class="tax-row">
@@ -929,11 +947,7 @@
                                     <span></span>
                                 </div>
                                 <div class="tax-row">
-                                    <span style="margin-left: 20px;">股息$720 + 抵免$280 = 应税$1,000</span>
-                                    <span></span>
-                                </div>
-                                <div class="tax-row">
-                                    <span style="margin-left: 20px;">$1,000 × 17.5% = 应缴$175</span>
+                                    <span style="margin-left: 20px;">应税$1,000 × 17.5% = 应缴$175</span>
                                     <span></span>
                                 </div>
                                 <div class="tax-row">
@@ -946,7 +960,7 @@
                                     <span></span>
                                 </div>
                                 <div class="tax-row">
-                                    <span style="margin-left: 20px;">$1,000 × 33% = 应缴$330</span>
+                                    <span style="margin-left: 20px;">应税$1,000 × 33% = 应缴$330</span>
                                     <span></span>
                                 </div>
                                 <div class="tax-row">
@@ -1148,25 +1162,120 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="example-box">
-                            <div class="example-title">
-                                <i class="fas fa-lightbulb"></i>
-                                <span>核心建议</span>
-                            </div>
-                            <p><strong>记住</strong>: 您的结构应该随着人生阶段和财富状况的变化而重新评估！</p>
-                            <p><strong>Remember</strong>: Your structure should be re-evaluated as your life stage and wealth situation evolve!</p>
-                        </div>
-                        
-                        <div class="conclusion" style="text-align: center; margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
-                            <h3>感谢您的关注！</h3>
-                            <p>如有任何问题，欢迎进一步交流讨论。</p>
-                            <a href="#" class="btn" data-slide="0"><i class="fas fa-home"></i> 返回首页</a>
-                        </div>
                     </div>
                     
                     <div class="slide-controls">
                         <a href="#" class="btn btn-outline prev-slide" data-slide="6"><i class="fas fa-arrow-left"></i> 上一页</a>
+                        <a href="#" class="btn next-slide" data-slide="8">下一页 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心建议总结页 -->
+        <section class="slide" id="slide-8">
+            <div class="container">
+                <h2 class="slide-title">核心建议总结</h2>
+                <p class="slide-subtitle">三条黄金法则指导您的所有权结构选择</p>
+                
+                <div class="content">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-header" style="background: var(--success);">
+                                <h3><i class="fas fa-bullseye"></i> 法则一</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4>明确投资目标</h4>
+                                <p><strong>Define Your Investment Goal</strong></p>
+                                <ul>
+                                    <li>自住业主：安居 + 强制储蓄 + 资本增值</li>
+                                    <li>投资者：租金收益 + 税务优化 + 收入分配</li>
+                                    <li>开发商：资产保护 + 项目收益 + 风险隔离</li>
+                                </ul>
+                                <p class="highlight-text">您的目标决定了结构选择的优先级</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header" style="background: var(--warning);">
+                                <h3><i class="fas fa-balance-scale"></i> 法则二</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4>根据风险匹配结构</h4>
+                                <p><strong>Match the Structure to the Risk</strong></p>
+                                <ul>
+                                    <li>低风险 → 个人直接持有</li>
+                                    <li>中等风险 → 合伙制</li>
+                                    <li>高风险 → 公司结构</li>
+                                    <li>财富传承 → 信托结构</li>
+                                </ul>
+                                <p class="highlight-text">结构复杂度应与风险水平成正比</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header" style="background: var(--accent);">
+                                <h3><i class="fas fa-user-tie"></i> 法则三</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4>务必寻求专业建议</h4>
+                                <p><strong>Always Seek Professional Advice</strong></p>
+                                <ul>
+                                    <li>规则复杂且不断变化</li>
+                                    <li>明线测试、利息抵扣限制</li>
+                                    <li>信托披露要求</li>
+                                    <li>反避税条款</li>
+                                </ul>
+                                <p class="highlight-text">专业顾问是避免昂贵错误的投资</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content fade-in" style="margin-top: 2rem;">
+                        <div class="example-box" style="background: #e8f5e8; border-left-color: var(--success);">
+                            <div class="example-title">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>持续评估的重要性</span>
+                            </div>
+                            <p><strong>记住：您的结构应该随着人生阶段和财富状况的变化而重新评估！</strong></p>
+                            <p><strong>Remember: Your structure should be re-evaluated as your life stage and wealth situation evolve!</strong></p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
+                                    <div style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">🏠</div>
+                                    <div><strong>首次购房</strong></div>
+                                    <div style="font-size: 0.9rem; color: #666;">个人持有</div>
+                                </div>
+                                <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
+                                    <div style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">👥</div>
+                                    <div><strong>合作投资</strong></div>
+                                    <div style="font-size: 0.9rem; color: #666;">合伙制</div>
+                                </div>
+                                <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
+                                    <div style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">💼</div>
+                                    <div><strong>业务扩展</strong></div>
+                                    <div style="font-size: 0.9rem; color: #666;">公司结构</div>
+                                </div>
+                                <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
+                                    <div style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">🛡️</div>
+                                    <div><strong>财富传承</strong></div>
+                                    <div style="font-size: 0.9rem; color: #666;">信托结构</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="conclusion" style="text-align: center; margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-radius: 8px;">
+                            <h3>感谢您的关注！</h3>
+                            <p>如有任何问题，欢迎进一步交流讨论。</p>
+                            <p>Thank you for your attention! Questions and discussions are welcome.</p>
+                            <a href="#" class="btn" style="background: white; color: var(--primary); margin-top: 1rem;" data-slide="0">
+                                <i class="fas fa-home"></i> 返回首页
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-controls">
+                        <a href="#" class="btn btn-outline prev-slide" data-slide="7"><i class="fas fa-arrow-left"></i> 上一页</a>
                         <a href="#" class="btn" data-slide="0">返回首页 <i class="fas fa-home"></i></a>
                     </div>
                 </div>
